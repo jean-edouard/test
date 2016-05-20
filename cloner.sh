@@ -12,4 +12,4 @@ while read line; do
     cd git/$repo
     git branch magic $gref
     cd -
-done < manifest
+done < $manifest
