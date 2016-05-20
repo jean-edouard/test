@@ -6,7 +6,7 @@ rm -rf git
 mkdir git
 
 while read line; do
-    repo=$(echo $line | sed 's/^Fetching //' | cut -d ' ' -f 1 | sed 's/\.git//')
+    repo=$(echo $line | sed 's/^Fetching //' | cut -d ' ' -f 1 | cut -d ':' -f 1)
     gref=$(echo $line | sed 's/^Fetching //' | cut -d ' ' -f 2)
     git clone https://github.com/OpenXT/$repo git/$repo
     cd git/$repo
